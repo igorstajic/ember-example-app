@@ -1,3 +1,44 @@
-<h1>Home</h1>
+<div class="page-home layout-fill layout-row">
+
+    {{#paper-sidenav-container class="inner-sidenav layout-fill"}}
+      {{#paper-sidenav
+        class="md-whiteframe-z2 main-sidebar"
+        name="main-sidebar"
+        lockedOpen='gt-sm'
+        open=leftSideBarOpen2
+        onToggle=(action (mut leftSideBarOpen2))}}
+        {{#paper-toolbar as |toolbar|}}
+          {{#paper-toolbar-tools}}Ember Examples{{/paper-toolbar-tools}}
+        {{/paper-toolbar}}
+        {{#paper-content}}
+          {{#paper-list}}
+            {{#menu-item active=(eq "home" currentRouteName) onClick=(transition-to "home")}}Introduction{{/menu-item}}
+            {{#menu-item active=(eq "index" currentRouteName) onClick=(transition-to "home")}}Demos{{/menu-item}}
+            {{#menu-item active=(eq "index" currentRouteName) onClick=(transition-to "home")}}About{{/menu-item}}
+
+          {{/paper-list}}
+        {{/paper-content}}
+      {{/paper-sidenav}}
+    {{/paper-sidenav-container}}
+    <div class="flex layout-column flex-gt-sm-85 flex-100">
+        {{#paper-toolbar}}
+          {{#paper-toolbar-tools}}
+            {{#paper-sidenav-toggle name="main-sidebar" as |toggleAction|}}
+              {{#paper-button classNames="hide-gt-sm" iconButton=true onClick=(action toggleAction)}}
+                {{paper-icon "menu" }}
+              {{/paper-button}}
+            {{/paper-sidenav-toggle}}
+
+            <span class="flex">
+            </span>
+            {{#menu-item onClick=(action "logout")}}
+                Sign Out
+            {{/menu-item}}
+          {{/paper-toolbar-tools}}
+      {{/paper-toolbar}}
+    </div>
+</div>
+
+
 
 {{outlet}}

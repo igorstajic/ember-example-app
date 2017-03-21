@@ -1,5 +1,12 @@
-h1 {
-  font-family: Ubuntu;
-  font-size: 38px;
-  color: orange;
+$primary: "purple";
+$accent: "yellow";
+$warn: "pink";
+
+@import 'ember-paper';
+@import 'colors';
+@import 'components';
+@import 'pages';
+
+.ember-application > .ember-view {
+  height: 100%;
 }

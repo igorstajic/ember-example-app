@@ -1,0 +1,11 @@
+{{#paper-form onSubmit=(action "login") as |form|}}
+  <div class="layout-row">
+    <div class="layout-column flex-100">
+      {{form.input label="E-mail" value=email onChange=(action (mut email))}}
+      {{form.input type='password' label="Password" value=password onChange=(action (mut password))}}
+    </div>
+  </div>
+  <div class="layout-row">
+    {{#form.submit-button raised=true primary=true}}Sign in{{/form.submit-button}}
+  </div>
+{{/paper-form}}

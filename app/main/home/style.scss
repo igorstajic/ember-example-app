@@ -1,0 +1,12 @@
+.page-home {
+  md-sidenav.main-sidebar {
+    background: $blue;
+    md-content {
+      background: 0 0;
+      color: white;
+    }
+  }
+  .user-data {
+    width: 200px;
+  }
+}
